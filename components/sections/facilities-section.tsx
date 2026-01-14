@@ -112,10 +112,14 @@ export function FacilitiesSection() {
         {/* Photo Gallery Preview */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            "colorful kindergarten classroom with toys",
-            "children outdoor playground equipment",
-            "cozy reading corner for kids",
-            "kids art supplies and creative space",
+            "/images/233318-1600x1030-what-do-kids-learn-kindergarten.jpg",
+            "/images/6-successacademies_25048656-1-scaled.jpg",
+            "/images/GettyImages-1461629187 (1).jpg",
+            "/images/his_sofija-05-19-235_0.jpg.webp",
+            "/images/images (1).jpg",
+            "/images/images.jpg",
+            "/images/image3.jpg",
+            "/images/233318-1600x1030-what-do-kids-learn-kindergarten.jpg"
           ].map((query, i) => (
             <div
               key={i}
@@ -127,8 +131,8 @@ export function FacilitiesSection() {
               `}
             >
               <img
-                src={`/.jpg?height=300&width=300&query=${encodeURIComponent(query)}`}
-                alt={query}
+                src={query}
+                alt={'Prueba'}
                 className="w-full h-full object-cover"
               />
               <div

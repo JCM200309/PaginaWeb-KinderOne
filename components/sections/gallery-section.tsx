@@ -5,15 +5,15 @@ import { PuzzlePiece } from "@/components/puzzle-piece"
 import { X } from "lucide-react"
 
 const galleryImages = [
-  { query: "happy children playing with colorful blocks kindergarten", color: "puzzle-pink" },
-  { query: "toddlers painting with fingers art class", color: "puzzle-blue" },
-  { query: "children dancing music class preschool", color: "puzzle-yellow" },
-  { query: "kids outdoor playground fun sunshine", color: "puzzle-green" },
-  { query: "children reading story time kindergarten", color: "puzzle-orange" },
-  { query: "preschool graduation ceremony happy kids", color: "puzzle-pink" },
-  { query: "children doing yoga mindfulness class", color: "puzzle-blue" },
-  { query: "kids science experiment preschool learning", color: "puzzle-yellow" },
-  { query: "children birthday party celebration kindergarten", color: "puzzle-green" },
+  { src: "/images/images.jpg", color: "puzzle-pink" },
+  { src: "/images/image3.jpg", color: "puzzle-blue" },
+  { src: "/images/images (1).jpg", color:"puzzle-yellow" },
+  { src: "/images/his_sofija-05-19-235_0.jpg.webp", color:"puzzle-green" },
+  { src: "/images/GettyImages-1461629187 (1).jpg", color:"puzzle-orange" },
+  { src: "/images/6-successacademies_25048656-1-scaled.jpg",color:"puzzle-pink" },
+  { src: "/images/images.jpg", color:"puzzle-blue" },
+  { src: "/images/image3.jpg", color:"puzzle-yellow" },
+  { src:  "/images/images (1).jpg", color:"puzzle-green" },
 ]
 
 export function GallerySection() {
@@ -68,8 +68,8 @@ export function GallerySection() {
               `}
             >
               <img
-                src={`/.jpg?height=400&width=400&query=${encodeURIComponent(image.query)}`}
-                alt={image.query}
+                src={image.src}
+                alt={"prueba"}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
 
@@ -103,8 +103,8 @@ export function GallerySection() {
             <X className="w-6 h-6 text-foreground" />
           </button>
           <img
-            src={`/.jpg?height=800&width=800&query=${encodeURIComponent(galleryImages[selectedImage].query)}`}
-            alt={galleryImages[selectedImage].query}
+            src={galleryImages[selectedImage].src}
+            alt={"Prueba"}
             className="max-w-full max-h-[80vh] rounded-3xl shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
