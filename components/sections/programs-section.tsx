@@ -1,7 +1,8 @@
 "use client"
 
+import { useState } from "react"
 import { PuzzlePiece } from "@/components/puzzle-piece"
-import { Baby, Smile, GraduationCap, Palette } from "lucide-react"
+import { Baby, Smile, GraduationCap, Palette, X, ChevronLeft, ChevronRight } from "lucide-react"
 
 const programs = [
   {
@@ -13,6 +14,7 @@ const programs = [
     features: ["Estimulación temprana", "Música y movimiento", "Alimentación cuidada"],
     color: "puzzle-pink",
     bgColor: "bg-puzzle-pink",
+    images: ["/images/images.jpg", "/images/image3.jpg", "/images/images (1).jpg"]
   },
   {
     icon: Smile,
@@ -23,6 +25,7 @@ const programs = [
     features: ["Arte y expresión", "Socialización", "Psicomotricidad", "Lenguaje"],
     color: "puzzle-blue",
     bgColor: "bg-puzzle-blue",
+    images: ["/images/his_sofija-05-19-235_0.jpg.webp", "/images/GettyImages-1461629187 (1).jpg"]
   },
   {
     icon: Palette,
@@ -30,9 +33,10 @@ const programs = [
     title: "Sala de 2",
     subtitle: "Creativos",
     description: "Desarrollo de la creatividad, autonomía y habilidades pre-escolares en un ambiente lúdico.",
-    features: ["Arte y expresión", "Socialización", "Psicomotricidad", "Lenguaje", "(CAMBIAR)"],
+    features: ["Arte y expresión", "Socialización", "Psicomotricidad", "Lenguaje"],
     color: "puzzle-yellow",
     bgColor: "bg-puzzle-yellow",
+    images: ["/images/6-successacademies_25048656-1-scaled.jpg", "/images/images.jpg"]
   },
   {
     icon: GraduationCap,
@@ -40,13 +44,36 @@ const programs = [
     title: "Sala de 3",
     subtitle: "Preparados",
     description: "Preparación integral para el ingreso a la escuela primaria con confianza y entusiasmo.",
-    features: ["Arte y expresión", "Socialización", "Psicomotricidad", "Lenguaje", "(CAMBIAR)"],
+    features: ["Arte y expresión", "Socialización", "Psicomotricidad", "Lenguaje"],
     color: "puzzle-green",
     bgColor: "bg-puzzle-green",
+    images: ["/images/image3.jpg", "/images/images (1).jpg"]
   },
 ]
 
 export function ProgramsSection() {
+  const [selectedProgram, setSelectedProgram] = useState<number | null>(null)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  const openCarousel = (index: number) => {
+    setSelectedProgram(index)
+    setCurrentImageIndex(0)
+  }
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    if (selectedProgram !== null) {
+      setCurrentImageIndex((prev) => (prev + 1) % programs[selectedProgram].images.length)
+    }
+  }
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    if (selectedProgram !== null) {
+      setCurrentImageIndex((prev) => (prev - 1 + programs[selectedProgram].images.length) % programs[selectedProgram].images.length)
+    }
+  }
+
   return (
     <section id="propuesta" className="relative py-20 overflow-hidden">
       {/* Background puzzle pattern */}
@@ -89,9 +116,10 @@ export function ProgramsSection() {
             <div
               key={program.title}
               className={`
-                relative group
+                relative group cursor-pointer
                 ${index % 2 === 0 ? "md:translate-y-8" : ""}
               `}
+              onClick={() => openCarousel(index)}
             >
               <div
                 className={`
@@ -146,6 +174,54 @@ export function ProgramsSection() {
           ))}
         </div>
       </div>
+
+      {/* Carousel Modal */}
+      {selectedProgram !== null && (
+        <div
+          className="fixed inset-0 z-50 bg-foreground/90 flex items-center justify-center p-4"
+          onClick={() => setSelectedProgram(null)}
+        >
+          <button
+            className="absolute top-4 right-4 w-12 h-12 rounded-full bg-puzzle-pink flex items-center justify-center z-[60]"
+            onClick={() => setSelectedProgram(null)}
+          >
+            <X className="w-6 h-6 text-foreground" />
+          </button>
+
+          <div className="relative w-full max-w-4xl flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={prevImage}
+              className="absolute left-4 p-2 rounded-full bg-background/20 hover:bg-background/40 transition-colors z-[60]"
+            >
+              <ChevronLeft className="w-8 h-8 text-white" />
+            </button>
+
+            <div className="relative aspect-video w-full rounded-3xl overflow-hidden bg-black/50">
+              <img
+                src={programs[selectedProgram].images[currentImageIndex]}
+                alt={programs[selectedProgram].title}
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            <button
+              onClick={nextImage}
+              className="absolute right-4 p-2 rounded-full bg-background/20 hover:bg-background/40 transition-colors z-[60]"
+            >
+              <ChevronRight className="w-8 h-8 text-white" />
+            </button>
+
+            <div className="absolute bottom-4 flex gap-2">
+              {programs[selectedProgram].images.map((_, i) => (
+                <div
+                  key={i}
+                  className={`w-2 h-2 rounded-full transition-colors ${i === currentImageIndex ? 'bg-white' : 'bg-white/40'}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

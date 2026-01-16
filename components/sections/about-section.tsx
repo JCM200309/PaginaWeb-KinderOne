@@ -1,7 +1,8 @@
 "use client"
 
+import { useState } from "react"
 import { PuzzlePiece } from "@/components/puzzle-piece"
-import { Heart, Star, Sparkles, Users } from "lucide-react"
+import { Heart, Star, Sparkles, Users, X } from "lucide-react"
 
 const values = [
   {
@@ -9,28 +10,35 @@ const values = [
     title: "Amor y Contención",
     description: "Cada niño recibe el cariño y la atención que necesita para sentirse seguro y feliz.",
     color: "bg-puzzle-pink",
+    details: "En Kinder One, el amor no es solo una palabra, es la base de todo lo que hacemos. Nuestra prioridad es que cada niño se sienta en su segundo hogar, rodeado de afecto y seguridad emocional para que pueda desplegar todo su potencial."
   },
   {
     icon: Sparkles,
     title: "Creatividad",
     description: "Fomentamos la expresión artística y la imaginación a través del juego libre.",
     color: "bg-puzzle-blue",
+    details: "La creatividad es el motor del aprendizaje. A través de talleres de arte, música y juego simbólico, invitamos a los niños a imaginar mundos nuevos y a expresarse con libertad, desarrollando su pensamiento crítico desde la primera infancia."
   },
   {
     icon: Star,
     title: "Excelencia",
     description: "Equipo docente capacitado y comprometido con la educación inicial de calidad.",
     color: "bg-puzzle-yellow",
+    details: "Nuestra excelencia está avalada por años de trayectoria y reconocimiento. 'Un jardín que marca la diferencia en Belgrano', destacó el diario local sobre nuestra propuesta pedagógica innovadora y nuestro compromiso con el desarrollo integral.",
+    isNews: true
   },
   {
     icon: Users,
     title: "Comunidad",
     description: "Familias y educadores trabajando juntos por el bienestar de los más pequeños.",
     color: "bg-puzzle-green",
+    details: "Creemos en la educación como un puente entre el jardín y la casa. Fomentamos una comunicación abierta y constante con las familias, construyendo una red de contención que acompaña el crecimiento de cada niño de manera personalizada."
   },
 ]
 
 export function AboutSection() {
+  const [selectedValue, setSelectedValue] = useState<number | null>(null)
+
   return (
     <section id="nosotros" className="relative py-20 bg-card overflow-hidden">
       {/* Decorative puzzle pieces */}
@@ -57,10 +65,11 @@ export function AboutSection() {
         {/* Values Grid - Puzzle Layout */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((value, index) => (
-            <div
+            <button
               key={value.title}
+              onClick={() => setSelectedValue(index)}
               className={`
-                relative p-6 rounded-3xl ${value.color}
+                relative p-6 rounded-3xl ${value.color} text-left
                 transform transition-all duration-300 hover:scale-105 hover:-rotate-1
                 ${index % 2 === 0 ? "rotate-1" : "-rotate-1"}
               `}
@@ -73,7 +82,7 @@ export function AboutSection() {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">{value.title}</h3>
               <p className="text-sm text-foreground/80 leading-relaxed">{value.description}</p>
-            </div>
+            </button>
           ))}
         </div>
 
@@ -97,6 +106,47 @@ export function AboutSection() {
           </div>
         </div>
       </div>
+
+      {/* Value Details Modal */}
+      {selectedValue !== null && (
+        <div
+          className="fixed inset-0 z-50 bg-foreground/90 flex items-center justify-center p-4"
+          onClick={() => setSelectedValue(null)}
+        >
+          <div
+            className={`relative max-w-lg w-full p-8 rounded-[2rem] shadow-2xl ${values[selectedValue].color} transform transition-all animate-in fade-in zoom-in duration-300`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-foreground text-background flex items-center justify-center hover:scale-110 transition-transform"
+              onClick={() => setSelectedValue(null)}
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="w-20 h-20 rounded-2xl bg-background/30 flex items-center justify-center mb-6">
+              {(() => {
+                const Icon = values[selectedValue].icon;
+                return <Icon className="w-10 h-10 text-foreground" />;
+              })()}
+            </div>
+
+            <h3 className="text-3xl font-black text-foreground mb-4">
+              {values[selectedValue].isNews ? "📰 Noticia: " : ""}{values[selectedValue].title}
+            </h3>
+
+            <div className="prose prose-sm text-foreground/90 text-lg leading-relaxed">
+              <p>{values[selectedValue].details}</p>
+            </div>
+
+            {values[selectedValue].isNews && (
+              <div className="mt-6 pt-6 border-t border-foreground/20 italic text-foreground/70">
+                — Publicado en el Diario Regional de Educación
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   )
 }
