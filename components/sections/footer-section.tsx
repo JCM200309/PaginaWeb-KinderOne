@@ -110,12 +110,6 @@ export function FooterSection() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-background/20 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-background/50 text-sm">© 2026 Kinder One. Todos los derechos reservados.</p>
-          <div className="flex items-center gap-2">
-            <span className="text-background/50 text-sm">Hecho con</span>
-            <span className="text-xl">❤️</span>
-            <span className="text-background/50 text-sm">y muchas</span>
-            <PuzzlePiece color="pink" size="sm" className="animate-wiggle" />
-          </div>
         </div>
       </div>
     </footer>

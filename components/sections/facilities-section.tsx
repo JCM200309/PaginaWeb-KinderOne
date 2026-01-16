@@ -32,8 +32,8 @@ const facilities = [
   },
   {
     icon: BookOpen,
-    title: "Biblioteca",
-    description: "Rincón de lectura acogedor con libros ilustrados para fomentar el amor por las historias.",
+    title: "Talleres",
+    description: "Talleres para fomentar la estimulación y el desarrollo cognitivo temprano",
   },
 ]
 
