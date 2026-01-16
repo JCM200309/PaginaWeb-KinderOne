@@ -7,8 +7,8 @@ export function FooterSection() {
   return (
     <footer className="relative bg-foreground text-background py-16 overflow-hidden">
       {/* Puzzle piece wave divider */}
-      <div className="absolute -top-px left-0 right-0">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+      <div className="absolute -top-6 sm:-top-4 xl:-top-px left-0 right-0 rotate-180 h-12">
+        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-10 lg:h-15 2xl:h-20" >
           <path
             d="M0 60V30C120 30 120 0 240 0C360 0 360 30 480 30C600 30 600 0 720 0C840 0 840 30 960 30C1080 30 1080 0 1200 0C1320 0 1320 30 1440 30V60H0Z"
             className="fill-card"

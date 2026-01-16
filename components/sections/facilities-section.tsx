@@ -109,7 +109,7 @@ export function FacilitiesSection() {
           })}
         </div>
 
-        {/* Photo Gallery Preview */}
+        {/* Photo Gallery Preview 
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             "/images/233318-1600x1030-what-do-kids-learn-kindergarten.jpg",
@@ -144,7 +144,7 @@ export function FacilitiesSection() {
               />
             </div>
           ))}
-        </div>
+        </div>*/}
       </div>
     </section>
   )
