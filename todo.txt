@@ -3,8 +3,8 @@
 3) Años experiencia = 38 (LISTO)
 4) Salas: Lactarios, 1,2 y 3 (Fotos de las Salas)
 5) Cuadradito mas (Queda mal)
-6) Cuadrados de Amor y contencion: Se abra e interactue, que haya una foto o un texto.
-7) Excelencia: Articulos mostrando la excelencia del Jardin
+6) Cuadrados de Amor y contencion: Se abra e interactue, que haya una foto o un texto. (LISTO)
+7) Excelencia: Articulos mostrando la excelencia del Jardin (Listo)
 8) Sacar bibliteca => poner estimulacion temprana.
 9) Espacios para crecer feliz => En vez de biblioteca poner algo de talleres para fomentar la estimulacion temprana. Un poco mas de diseño y fotos cuando abren
 
@@ -13,3 +13,4 @@
 TODO:
 
 1)Cambiar texto de las salas, con las cualidades y las palabras claves
+2) Buscar el articulo o ver como poner el texto
