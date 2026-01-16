@@ -49,7 +49,7 @@ export function AboutSection() {
             Construyendo el futuro, <span className="text-primary">pieza por pieza</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Desde hace más de 25 años, en <strong>Kinder One</strong> acompañamos a las familias en los primeros pasos
+            Desde hace más de 35 años, en <strong>Kinder One</strong> acompañamos a las familias en los primeros pasos
             de sus hijos, creando un espacio donde el aprendizaje y la diversión van de la mano.
           </p>
         </div>

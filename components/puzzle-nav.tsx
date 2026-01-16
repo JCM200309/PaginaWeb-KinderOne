@@ -31,7 +31,8 @@ export function PuzzleNav() {
               className="group-hover:scale-110 transition-transform"
             />
             <span className="text-2xl font-black text-foreground">
-              Kinder <span className="text-primary">One</span>
+              <span className="text-blue-900"> Kinder </span> <span className="text-red-600">One</span>
+              <span className="text-green-600"> Belgrano </span>
             </span>
           </a>
 

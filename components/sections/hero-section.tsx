@@ -63,9 +63,9 @@ export function HeroSection() {
             {/* Stats as puzzle pieces */}
             <div className="flex flex-wrap gap-4 pt-8">
               {[
-                { number: "25+", label: "Años de experiencia" },
-                { number: "1-5", label: "Años de edad" },
-                { number: "❤️", label: "Mucho amor" },
+                { number: "35+", label: "Años de experiencia" },
+                { number: "0-3", label: "Años de edad" },
+                {number: "🌱", label: "Un lugar para crecer"}
               ].map((stat, i) => (
                 <div
                   key={stat.label}
@@ -73,7 +73,7 @@ export function HeroSection() {
                     "px-6 py-4 rounded-2xl text-center transform",
                     i === 0 && "bg-puzzle-pink rotate-2",
                     i === 1 && "bg-puzzle-blue -rotate-1",
-                    i === 2 && "bg-puzzle-green rotate-1",
+                    i === 2 && "bg-puzzle-green rotate-1"
                   )}
                 >
                   <div className="text-2xl font-black text-foreground">{stat.number}</div>
