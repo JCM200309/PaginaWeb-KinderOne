@@ -10,6 +10,7 @@ const navItems = [
   { label: "Nosotros", href: "#nosotros", color: "bg-puzzle-blue" },
   { label: "Propuesta", href: "#propuesta", color: "bg-puzzle-yellow" },
   { label: "Instalaciones", href: "#instalaciones", color: "bg-puzzle-green" },
+  { label: "Uniforme", href: "#uniforme", color: "bg-puzzle-blue" },
   { label: "Galería", href: "#galeria", color: "bg-puzzle-orange" },
   { label: "Contacto", href: "#contacto", color: "bg-puzzle-pink" },
 ]

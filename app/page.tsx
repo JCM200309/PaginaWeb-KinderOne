@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/sections/hero-section"
 import { AboutSection } from "@/components/sections/about-section"
 import { ProgramsSection } from "@/components/sections/programs-section"
 import { FacilitiesSection } from "@/components/sections/facilities-section"
+import { UniformSection } from "@/components/sections/uniform-section"
 import { GallerySection } from "@/components/sections/gallery-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { FooterSection } from "@/components/sections/footer-section"
@@ -15,6 +16,7 @@ export default function KinderOnePage() {
       <AboutSection />
       <ProgramsSection />
       <FacilitiesSection />
+      <UniformSection />
       <GallerySection />
       <ContactSection />
       <FooterSection />
