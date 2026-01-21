@@ -24,8 +24,7 @@ const values = [
     title: "Excelencia",
     description: "Equipo docente capacitado y comprometido con la educación inicial de calidad.",
     color: "bg-puzzle-yellow",
-    details: "Nuestra excelencia está avalada por años de trayectoria y reconocimiento. 'Un jardín que marca la diferencia en Belgrano', destacó el diario local sobre nuestra propuesta pedagógica innovadora y nuestro compromiso con el desarrollo integral.",
-    isNews: true
+    details: "Nuestro proyecto institucional ha sido reconocido por la Dirección General de Educación de Gestión Privada (DGEGP) como parte de una educación de calidad, destacando a Kinder One como institución representativa de este enfoque pedagógico, comprometido con el desarrollo integral de niños y niñas.  Asimismo, una de nuestras propuestas y actividades fue seleccionada por el Gobierno de la Ciudad de Buenos Aires para representar el eje “Infancias en clave de bienestar” en un acto oficial realizado en un auditorio, donde una imagen de nuestro jardín fue elegida como fondo de la presentación, reafirmando el valor y el impacto de nuestro trabajo educativo."
   },
   {
     icon: Users,
@@ -54,11 +53,10 @@ export function AboutSection() {
             <PuzzlePiece color="blue" size="sm" className="animate-wiggle" />
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground mb-6 text-balance">
-            Construyendo el futuro, <span className="text-primary">pieza por pieza</span>
+            Un jardín con historia y <span className="text-primary"> mirada actual</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Desde hace más de 35 años, en <strong>Kinder One</strong> acompañamos a las familias en los primeros pasos
-            de sus hijos, creando un espacio donde el aprendizaje y la diversión van de la mano.
+            Kinder One nace como un proyecto de innovación pedagógica, respaldado por más de 35 años de experiencia en educación inicial. Nuestra propuesta se centra en el desarrollo integral de cada niño y niña, respetando sus tiempos, emociones y necesidades, en un entorno seguro, afectivo y estimulante.
           </p>
         </div>
 
@@ -97,8 +95,7 @@ export function AboutSection() {
               </div>
               <div>
                 <blockquote className="text-xl lg:text-2xl font-bold text-foreground mb-4 leading-relaxed">
-                  "Creemos que cada niño es una pieza única e irrepetible. Nuestro trabajo es ayudarlos a descubrir cómo
-                  encajan en el maravilloso rompecabezas de la vida."
+                  Acompañamos los primeros años con una propuesta basada en el juego, el cuidado y una crianza respetuosa, en vínculo cercano con las familias.
                 </blockquote>
                 <cite className="text-muted-foreground font-medium">— Equipo Pedagógico de Kinder One</cite>
               </div>
@@ -139,11 +136,7 @@ export function AboutSection() {
               <p>{values[selectedValue].details}</p>
             </div>
 
-            {values[selectedValue].isNews && (
-              <div className="mt-6 pt-6 border-t border-foreground/20 italic text-foreground/70">
-                — Publicado en el Diario Regional de Educación
-              </div>
-            )}
+            
           </div>
         </div>
       )}

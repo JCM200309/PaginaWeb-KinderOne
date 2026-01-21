@@ -10,8 +10,8 @@ const programs = [
     age: "Lactarios",
     title: "Sala Lactarios",
     subtitle: "Primeros Pasos",
-    description: "Estimulación temprana, desarrollo sensorial y mucho amor en un ambiente seguro y cálido.",
-    features: ["Estimulación temprana", "Música y movimiento", "Alimentación cuidada"],
+    description: "Acompañamiento en un ambiente cálido, seguro y afectivo. La propuesta prioriza el cuidado personalizado, el respeto por los ritmos individuales y la construcción de vínculos de confianza. A través del juego, la estimulación sensorial y el movimiento libre, favorecemos el desarrollo integral desde los primeros aprendizajes.",
+    features: ["Estimulación temprana", "Música y movimiento", "Ambiente calido", "Juego y Movimiento libre"],
     color: "puzzle-pink",
     bgColor: "bg-puzzle-pink",
     images: ["/images/images.jpg", "/images/image3.jpg", "/images/images (1).jpg"]
@@ -20,9 +20,9 @@ const programs = [
     icon: Smile,
     age: "0-1 años",
     title: "Sala de 1",
-    subtitle: "Exploradores",
-    description: "Descubrimiento del mundo a través del juego, el arte y las primeras interacciones sociales.",
-    features: ["Arte y expresión", "Socialización", "Psicomotricidad", "Lenguaje"],
+    subtitle: "Deambuladores",
+    description: "Impulso para lograr los primeros desplazamientos, la exploración del entorno y el desarrollo de la autonomía. Proponemos experiencias de juego que estimulan la motricidad, el lenguaje, la curiosidad y la socialización, en un marco de cuidado, contención y respeto por los tiempos de cada niño y niña.",
+    features: ["Arte y expresión", "Desplazamientos", "Autonomia", "Motricidad"],
     color: "puzzle-blue",
     bgColor: "bg-puzzle-blue",
     images: ["/images/his_sofija-05-19-235_0.jpg.webp", "/images/GettyImages-1461629187 (1).jpg"]
@@ -32,8 +32,8 @@ const programs = [
     age: "1-2 años",
     title: "Sala de 2",
     subtitle: "Creativos",
-    description: "Desarrollo de la creatividad, autonomía y habilidades pre-escolares en un ambiente lúdico.",
-    features: ["Arte y expresión", "Socialización", "Psicomotricidad", "Lenguaje"],
+    description: "Espacio donde el juego es el eje central del aprendizaje. Acompañamos el crecimiento del lenguaje, la construcción de la identidad, la autonomía y la interacción con pares, promoviendo experiencias significativas en un entorno seguro, afectivo y estimulante.",
+    features: ["Juego", "Identidad", "Interaccion"],
     color: "puzzle-yellow",
     bgColor: "bg-puzzle-yellow",
     images: ["/images/6-successacademies_25048656-1-scaled.jpg", "/images/images.jpg"]
@@ -43,8 +43,8 @@ const programs = [
     age: "2-3 años",
     title: "Sala de 3",
     subtitle: "Preparados",
-    description: "Preparación integral para el ingreso a la escuela primaria con confianza y entusiasmo.",
-    features: ["Arte y expresión", "Socialización", "Psicomotricidad", "Lenguaje"],
+    description: "Impulso en el ingreso pleno al Nivel Inicial, fortaleciendo la autonomía, la expresión, la creatividad y la convivencia. A través del juego, el lenguaje, el arte y la exploración, favorecemos aprendizajes que sientan las bases para la trayectoria escolar futura, en articulación permanente con las familias.",
+    features: ["Autonomia", "Exploracion", "Expresion", "Creatividad"],
     color: "puzzle-green",
     bgColor: "bg-puzzle-green",
     images: ["/images/image3.jpg", "/images/images (1).jpg"]
@@ -105,8 +105,7 @@ export function ProgramsSection() {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Cada sala está pensada como una pieza del rompecabezas educativo, adaptada a las necesidades y capacidades
-            de cada edad.
+            Promovemos el desarrollo de la autonomía, la creatividad, el pensamiento crítico y el bienestar emocional, a través del juego, la exploración y la interacción, con el acompañamiento permanente del equipo docente y una articulación cercana con las familias.
           </p>
         </div>
 

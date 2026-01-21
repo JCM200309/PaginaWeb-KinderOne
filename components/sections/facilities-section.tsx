@@ -22,18 +22,18 @@ const facilities = [
   },
   {
     icon: Music,
-    title: "Sala de Música",
-    description: "Instrumentos musicales adaptados para la exploración sonora y el desarrollo artístico.",
+    title: "Música y danza",
+    description: "A travez de la danza y la musica logramos estimular la expresion y la sensibilidad artistica, para fortalecer la comunicación y confianza en sí mismos.",
   },
   {
     icon: Utensils,
     title: "Cocina Propia",
-    description: "Menú nutritivo y casero, elaborado diariamente con ingredientes frescos y de calidad.",
+    description: "Personal capacitado con certificación para Manipulacion de Alimentos para garantizar una alimentacion consciente y saludable.",
   },
   {
     icon: BookOpen,
     title: "Talleres",
-    description: "Talleres para fomentar la estimulación y el desarrollo cognitivo temprano",
+    description: "Desde Yoga y deportes para favorecer la coordinacion y el equilibrio, hasta Ingles para ir integrando el idioma como herramienta de comunicación  ",
   },
 ]
 

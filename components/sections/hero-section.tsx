@@ -32,17 +32,16 @@ export function HeroSection() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-balance">
-              Donde cada{" "}
+              Donde las{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 text-primary">pieza</span>
+                <span className="relative z-10 text-primary">infancias</span>
                 <div className="absolute -bottom-2 left-0 right-0 h-4 bg-puzzle-yellow -rotate-1 rounded-lg" />
               </span>{" "}
-              encuentra su lugar
+              crecen en bienestar, cuidado y aprendizaje
             </h1>
 
             <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-              En <strong>Kinder One</strong> creemos que cada niño es una pieza única y especial. A través del juego, el
-              arte y el amor, construimos juntos el rompecabezas del aprendizaje.
+              <strong>Kinder One </strong> es un jardín maternal y de educación inicial con más de 35 años de trayectoria, por el Gobierno de la Ciudad de Buenos Aires por su propuesta educativa de calidad, centrada en el desarrollo integral de niños y niñas.
             </p>
 
             <div className="flex flex-wrap gap-4">
