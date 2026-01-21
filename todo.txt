@@ -8,6 +8,8 @@
 8) Sacar bibliteca => poner estimulacion temprana. (LISTO)
 9) Espacios para crecer feliz => En vez de biblioteca poner algo de talleres para fomentar la estimulacion temprana. Un poco mas de diseño y fotos cuando abren (LISTO)
 
+10)Configurar formulario y links a emails
+
 
 
 TODO:

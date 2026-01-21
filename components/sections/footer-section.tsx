@@ -2,6 +2,7 @@
 
 import { PuzzlePiece } from "@/components/puzzle-piece"
 import { Instagram, Facebook, Youtube } from "lucide-react"
+import Image from "next/image"
 
 export function FooterSection() {
   return (
@@ -21,18 +22,19 @@ export function FooterSection() {
           {/* Brand */}
           <div className="space-y-6">
             <a href="#inicio" className="flex items-center gap-3">
-              <div className="flex -space-x-1">
-                <div className="w-8 h-8 bg-puzzle-pink rounded-lg transform rotate-12" />
-                <div className="w-8 h-8 bg-puzzle-blue rounded-lg transform -rotate-6" />
-                <div className="w-8 h-8 bg-puzzle-yellow rounded-lg transform rotate-3" />
-              </div>
+              <Image
+                src="/images/logo.png"
+                alt="Kinder One Logo"
+                width={56}
+                height={56}
+                className="group-hover:scale-110 transition-transform"
+              />
               <span className="text-2xl font-black text-background">
                 Kinder <span className="text-puzzle-pink">One</span>
               </span>
             </a>
             <p className="text-background/70 leading-relaxed">
-              Donde cada pieza encuentra su lugar. Más de 25 años formando a los pequeños gigantes del mañana con amor,
-              creatividad y dedicación.
+              Donde las infancias crecen en bienestar, cuidado y aprendizaje.
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
