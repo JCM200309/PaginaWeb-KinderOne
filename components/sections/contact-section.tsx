@@ -9,6 +9,10 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
 
+const phoneNumber = "+5491166415555";
+const message = encodeURIComponent("Hola, queria consultar mas información sobre Kinder One!");
+const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
 const contactInfo = [
   {
     icon: Phone,
@@ -20,15 +24,15 @@ const contactInfo = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+54 9 11 1234-5678",
-    href: "https://wa.me/5491112345678",
+    value: "+54 9 11 66415555",
+    href: whatsappUrl,
     color: "bg-puzzle-green",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "info@kinderone.com.ar",
-    href: "mailto:info@kinderone.com.ar",
+    value: "jardinkinderone@gmail.com",
+    href: "mailto:jardinkinderone@gmail.com",
     color: "bg-puzzle-blue",
   },
   {
@@ -41,7 +45,7 @@ const contactInfo = [
   {
     icon: Clock,
     label: "Horario",
-    value: "Lunes a Viernes 7:30 - 17:30",
+    value: "Lunes a Viernes 8:00 - 18:00",
     href: null,
     color: "bg-puzzle-orange",
   },
@@ -54,6 +58,7 @@ export function ContactSection() {
     phone: "",
     message: "",
   })
+  
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -188,18 +193,13 @@ export function ContactSection() {
 
             {/* Map placeholder */}
             <div className="relative h-64 rounded-3xl overflow-hidden mt-8">
-              <img
-                src="/colorful-illustrated-map-location-marker-kindergar.jpg"
-                alt="Ubicación de Kinder One"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-puzzle-blue/20" />
-              <div className="absolute bottom-4 left-4 right-4 bg-background/90 backdrop-blur-sm rounded-2xl p-4">
-                <p className="font-bold text-foreground flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  Av. del Jardín 1234, CABA
-                </p>
-              </div>
+             
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.465893844745!2d-58.44492282353237!3d-34.5670762555653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5c7af85072d%3A0x8c56c7bc0af0edc2!2sJARDIN%20KINDER%20ONE!5e0!3m2!1ses-419!2sar!4v1769035823018!5m2!1ses-419!2sar" className="w-full h-full"></iframe>
+
+
+              
+              
             </div>
           </div>
         </div>

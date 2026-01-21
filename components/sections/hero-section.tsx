@@ -83,7 +83,7 @@ export function HeroSection() {
           </div>
 
           {/* Right Content - Puzzle Illustration */}
-          <div className="relative">
+          <div className="relative lg:pb-50">
             <AnimatedPuzzle />
           </div>
         </div>
