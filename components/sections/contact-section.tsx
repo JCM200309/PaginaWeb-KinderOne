@@ -71,8 +71,9 @@ export function ContactSection() {
       fd.append("phone",formData.phone);
       fd.append("message",formData.message);
 
-      const res = await fetch('/lib/contarctar.js',{
+      const res = await fetch('/api/contactar',{
         method:'POST',
+        headers: { "Content-Type": "application/json" },
         body: fd,
       });
 
