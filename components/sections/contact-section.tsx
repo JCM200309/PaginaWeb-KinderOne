@@ -60,11 +60,39 @@ export function ContactSection() {
   })
   
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log(formData)
-  }
+    
+    try{
+      const fd = new FormData();
+
+      fd.append("name",formData.name);
+      fd.append("email",formData.email);
+      fd.append("phone",formData.phone);
+      fd.append("message",formData.message);
+
+      const res = await fetch('/lib/contarctar.js',{
+        method:'POST',
+        body: fd,
+      });
+
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data?.error || 'No se pudo enviar la solicitud.');
+      }
+
+      // opcional: limpiar form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message:''
+      });
+
+    }catch (e) {
+      console.error("ERROR /lib/contactar.js", e);
+    }
+  };
 
   return (
     <section id="contacto" className="relative py-20 bg-card overflow-hidden">
