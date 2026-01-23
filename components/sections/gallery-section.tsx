@@ -5,15 +5,17 @@ import { PuzzlePiece } from "@/components/puzzle-piece"
 import { X } from "lucide-react"
 
 const galleryImages = [
-  { src: "/images/images.jpg", color: "puzzle-pink" },
-  { src: "/images/image3.jpg", color: "puzzle-blue" },
-  { src: "/images/images (1).jpg", color:"puzzle-yellow" },
-  { src: "/images/his_sofija-05-19-235_0.jpg.webp", color:"puzzle-green" },
-  { src: "/images/GettyImages-1461629187 (1).jpg", color:"puzzle-orange" },
-  { src: "/images/6-successacademies_25048656-1-scaled.jpg",color:"puzzle-pink" },
-  { src: "/images/images.jpg", color:"puzzle-blue" },
-  { src: "/images/image3.jpg", color:"puzzle-yellow" },
-  { src:  "/images/images (1).jpg", color:"puzzle-green" },
+  { src: "/collage/collage_arcoiris.jpeg", color: "puzzle-pink" },
+  { src: "/collage/collage_bandera.jpeg", color: "puzzle-blue" },
+  { src: "/collage/collage_deporte.jpeg", color:"puzzle-yellow" },
+  { src: "/collage/collage_dia_ninez.jpeg", color:"puzzle-green" },
+  { src: "/collage/collage_escenario.jpeg", color:"puzzle-orange" },
+  { src: "/collage/collage_navidad.jpeg",color:"puzzle-pink" },
+  { src: "/collage/collage_otoño.jpeg", color:"puzzle-blue" },
+  { src: "/collage/collage_reciclado.jpeg", color:"puzzle-yellow" },
+  { src:  "/collage/collage_yoga.jpeg", color:"puzzle-green" },
+  { src:  "/collage/collage_invierno.jpeg", color:"puzzle-green" },
+  { src:  "/collage/collage_construccion.jpeg", color:"puzzle-green" },
 ]
 
 export function GallerySection() {

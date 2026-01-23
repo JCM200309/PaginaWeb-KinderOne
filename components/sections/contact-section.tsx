@@ -196,8 +196,6 @@ export function ContactSection() {
              
 
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.465893844745!2d-58.44492282353237!3d-34.5670762555653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5c7af85072d%3A0x8c56c7bc0af0edc2!2sJARDIN%20KINDER%20ONE!5e0!3m2!1ses-419!2sar!4v1769035823018!5m2!1ses-419!2sar" className="w-full h-full"></iframe>
-
-
               
               
             </div>
