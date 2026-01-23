@@ -64,18 +64,14 @@ export function ContactSection() {
     e.preventDefault()
     
     try{
-      const fd = new FormData();
+      
 
-      fd.append("name",formData.name);
-      fd.append("email",formData.email);
-      fd.append("phone",formData.phone);
-      fd.append("message",formData.message);
-
-      const res = await fetch('/api/contactar',{
-        method:'POST',
+      const res = await fetch("/api/contactar", {
+        method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: fd,
+        body: JSON.stringify(formData),
       });
+
 
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
