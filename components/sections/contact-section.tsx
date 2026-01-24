@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
 import ReCAPTCHA from "react-google-recaptcha"
+import { useToast } from "@/components/ui/use-toast";
 
 const phoneNumber = "+5491166415555";
 const message = encodeURIComponent("Hola, queria consultar mas información sobre Kinder One!");
@@ -66,6 +67,7 @@ export function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    const { toast } = useToast();
     
     try{
 
@@ -82,6 +84,14 @@ export function ContactSection() {
         email: '',
         phone: '',
         message:''
+      });
+
+      
+
+
+      toast({
+        title: "Mensaje enviado",
+        description: "Gracias por escribirnos 💛",
       });
 
     }catch (e) {
@@ -183,6 +193,7 @@ export function ContactSection() {
                 >
                   Enviar Mensaje 🧩
                 </Button>
+                
               </form>
             </div>
 
