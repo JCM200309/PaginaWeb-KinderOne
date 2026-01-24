@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
 import { sendContactEmail } from "@/lib/contactar";
 
+export const runtime = "nodejs";
+
 export async function POST(req) {
   try {
-    
-    await sendContactEmail(req);
+    const body = await req.json();
+    await sendContactEmail(body);
     return NextResponse.json({ ok: true }, { status: 200 });
   } catch (e) {
     console.error("API /api/contactar error:", e);

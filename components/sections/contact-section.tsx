@@ -64,24 +64,13 @@ export function ContactSection() {
     e.preventDefault()
     
     try{
-      
-      const fd = new FormData();
 
-      fd.append("name", formData.name);
-      fd.append("email", formData.email);
-      fd.append("phone", formData.phone);
-      fd.append("message", formData.message);
-
-      const res = await fetch("/api/contactar", {
+      await fetch("/api/contactar", {
         method: "POST",
-        body: fd,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
-
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        throw new Error(data?.error || 'No se pudo enviar la solicitud.');
-      }
 
       // opcional: limpiar form
       setFormData({
