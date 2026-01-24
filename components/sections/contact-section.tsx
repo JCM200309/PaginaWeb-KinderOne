@@ -65,11 +65,16 @@ export function ContactSection() {
     
     try{
       
+      const fd = new FormData();
+
+      fd.append("name", formData.name);
+      fd.append("email", formData.email);
+      fd.append("phone", formData.phone);
+      fd.append("message", formData.message);
 
       const res = await fetch("/api/contactar", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: fd,
       });
 
 
