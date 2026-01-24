@@ -8,10 +8,13 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
+import ReCAPTCHA from "react-google-recaptcha"
 
 const phoneNumber = "+5491166415555";
 const message = encodeURIComponent("Hola, queria consultar mas información sobre Kinder One!");
 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+
 
 const contactInfo = [
   {
@@ -52,6 +55,7 @@ const contactInfo = [
 ]
 
 export function ContactSection() {
+  const [capVal, setCapVal] = useState<string | null>(null)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -165,10 +169,17 @@ export function ContactSection() {
                     className="rounded-xl border-2 border-muted focus:border-puzzle-yellow resize-none"
                   />
                 </div>
+                <div>
+                  <ReCAPTCHA
+                    sitekey="6Ld7E1UsAAAAAPm1TvhlFCfB5rdkWzrttolh2_Rq"
+                    onChange={(val: string | null) => setCapVal(val)}
+                  />
+                </div>
                 <Button
                   type="submit"
                   size="lg"
                   className="w-full rounded-full text-lg font-bold bg-primary hover:bg-primary/90 h-14"
+                  disabled={!capVal}
                 >
                   Enviar Mensaje 🧩
                 </Button>
