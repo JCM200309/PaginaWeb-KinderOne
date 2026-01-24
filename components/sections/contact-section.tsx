@@ -19,16 +19,9 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
 const contactInfo = [
   {
-    icon: Phone,
-    label: "Teléfono",
-    value: "(011) 4123-4567",
-    href: "tel:+541141234567",
-    color: "bg-puzzle-pink",
-  },
-  {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+54 9 11 66415555",
+    value: "+54 9 11 6641-5555",
     href: whatsappUrl,
     color: "bg-puzzle-green",
   },
@@ -43,7 +36,7 @@ const contactInfo = [
     icon: MapPin,
     label: "Dirección",
     value: "Av. del Jardín 1234, CABA",
-    href: "https://maps.google.com",
+    href: "https://maps.app.goo.gl/HGvPMvHm5X5Dscyn8",
     color: "bg-puzzle-yellow",
   },
   {

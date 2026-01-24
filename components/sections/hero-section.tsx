@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { PuzzlePiece } from "@/components/puzzle-piece"
 import { AnimatedPuzzle } from "@/components/animated-puzzle"
 import { Button } from "@/components/ui/button"
@@ -41,22 +42,17 @@ export function HeroSection() {
             </h1>
 
             <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-              <strong>Kinder One </strong> es un jardín maternal y de educación inicial con más de 35 años de trayectoria, por el Gobierno de la Ciudad de Buenos Aires por su propuesta educativa de calidad, centrada en el desarrollo integral de niños y niñas.
+              <strong>Kinder One </strong> es un jardín maternal y de educación inicial con más de 35 años de trayectoria, reconocido por el Gobierno de la Ciudad de Buenos Aires por su propuesta educativa de calidad, centrada en el desarrollo integral de niños y niñas.
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="rounded-full text-lg px-8 font-bold bg-primary hover:bg-primary/90">
-                <Phone className="mr-2 h-5 w-5" />
-                Contactanos
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full text-lg px-8 font-bold border-2 bg-transparent"
-              >
-                <Mail className="mr-2 h-5 w-5" />
-                Más Info
-              </Button>
+              <Link href="#contacto">
+                <Button size="lg" className="rounded-full text-lg px-8 font-bold bg-primary hover:bg-primary/90">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Contactanos
+                </Button>
+              </Link>
+              
             </div>
 
             {/* Stats as puzzle pieces */}

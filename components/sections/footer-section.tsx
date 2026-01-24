@@ -36,23 +36,8 @@ export function FooterSection() {
             <p className="text-background/70 leading-relaxed">
               Donde las infancias crecen en bienestar, cuidado y aprendizaje.
             </p>
-            {/* Social Links */}
-            <div className="flex gap-3">
-              {[
-                { icon: Instagram, color: "bg-puzzle-pink", href: "#" },
-                { icon: Facebook, color: "bg-puzzle-blue", href: "#" },
-                { icon: Youtube, color: "bg-puzzle-orange", href: "#" },
-              ].map((social, i) => (
-                <a
-                  key={i}
-                  href={social.href}
-                  className={`w-10 h-10 rounded-xl ${social.color} flex items-center justify-center
-                    transform transition-all hover:scale-110 hover:rotate-6`}
-                >
-                  <social.icon className="w-5 h-5 text-foreground" />
-                </a>
-              ))}
-            </div>
+            
+            
           </div>
 
           {/* Quick Links */}
@@ -91,19 +76,16 @@ export function FooterSection() {
             <div className="space-y-4 text-background/70">
               <p className="flex items-start gap-2">
                 <span className="text-puzzle-pink">📍</span>
-                Av. del Jardín 1234, CABA
+                Av. Federico Lacroze 2105, CABA
               </p>
-              <p className="flex items-start gap-2">
-                <span className="text-puzzle-blue">📞</span>
-                (011) 4123-4567
-              </p>
+              
               <p className="flex items-start gap-2">
                 <span className="text-puzzle-green">💬</span>
-                +54 9 11 1234-5678
+                +54 9 11 6641-5555
               </p>
               <p className="flex items-start gap-2">
                 <span className="text-puzzle-yellow">✉️</span>
-                info@kinderone.com.ar
+                jardinkinderone@gmail.com
               </p>
             </div>
           </div>
