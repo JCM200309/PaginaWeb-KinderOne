@@ -129,7 +129,7 @@ export function AboutSection() {
             </div>
 
             <h3 className="text-3xl font-black text-foreground mb-4">
-              {values[selectedValue].isNews ? "📰 Noticia: " : ""}{values[selectedValue].title}
+              {values[selectedValue].title}
             </h3>
 
             <div className="prose prose-sm text-foreground/90 text-lg leading-relaxed">

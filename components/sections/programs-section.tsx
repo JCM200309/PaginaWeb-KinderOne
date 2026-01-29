@@ -7,7 +7,6 @@ import { Baby, Smile, GraduationCap, Palette, X, ChevronLeft, ChevronRight } fro
 const programs = [
   {
     icon: Baby,
-    age: "Lactarios",
     title: "Sala Lactarios",
     subtitle: "Primeros Pasos",
     description: "Acompañamiento en un ambiente cálido, seguro y afectivo. La propuesta prioriza el cuidado personalizado, el respeto por los ritmos individuales y la construcción de vínculos de confianza. A través del juego, la estimulación sensorial y el movimiento libre, favorecemos el desarrollo integral desde los primeros aprendizajes.",
@@ -18,7 +17,6 @@ const programs = [
   },
   {
     icon: Smile,
-    age: "0-1 años",
     title: "Sala de 1",
     subtitle: "Deambuladores",
     description: "Impulso para lograr los primeros desplazamientos, la exploración del entorno y el desarrollo de la autonomía. Proponemos experiencias de juego que estimulan la motricidad, el lenguaje, la curiosidad y la socialización, en un marco de cuidado, contención y respeto por los tiempos de cada niño y niña.",
@@ -29,7 +27,6 @@ const programs = [
   },
   {
     icon: Palette,
-    age: "1-2 años",
     title: "Sala de 2",
     subtitle: "Creativos",
     description: "Espacio donde el juego es el eje central del aprendizaje. Acompañamos el crecimiento del lenguaje, la construcción de la identidad, la autonomía y la interacción con pares, promoviendo experiencias significativas en un entorno seguro, afectivo y estimulante.",
@@ -40,7 +37,6 @@ const programs = [
   },
   {
     icon: GraduationCap,
-    age: "2-3 años",
     title: "Sala de 3",
     subtitle: "Preparados",
     description: "Impulso en el ingreso pleno al Nivel Inicial, fortaleciendo la autonomía, la expresión, la creatividad y la convivencia. A través del juego, el lenguaje, el arte y la exploración, favorecemos aprendizajes que sientan las bases para la trayectoria escolar futura, en articulación permanente con las familias.",
@@ -55,6 +51,7 @@ export function ProgramsSection() {
   const [selectedProgram, setSelectedProgram] = useState<number | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
+  {/* 
   const openCarousel = (index: number) => {
     setSelectedProgram(index)
     setCurrentImageIndex(0)
@@ -73,7 +70,7 @@ export function ProgramsSection() {
       setCurrentImageIndex((prev) => (prev - 1 + programs[selectedProgram].images.length) % programs[selectedProgram].images.length)
     }
   }
-
+  */}
   return (
     <section id="propuesta" className="relative py-20 overflow-hidden">
       {/* Background puzzle pattern */}
@@ -118,7 +115,7 @@ export function ProgramsSection() {
                 relative group cursor-pointer
                 ${index % 2 === 0 ? "md:translate-y-8" : ""}
               `}
-              onClick={() => openCarousel(index)}
+              //onClick={() => openCarousel(index)}
             >
               <div
                 className={`
@@ -142,9 +139,7 @@ export function ProgramsSection() {
                     <div className="w-16 h-16 rounded-2xl bg-background/30 flex items-center justify-center">
                       <program.icon className="w-8 h-8 text-foreground" />
                     </div>
-                    <span className="px-4 py-2 rounded-full bg-background/30 text-sm font-bold text-foreground">
-                      {program.age}
-                    </span>
+                    
                   </div>
 
                   <h3 className="text-2xl font-black text-foreground mb-1">{program.title}</h3>
@@ -174,7 +169,7 @@ export function ProgramsSection() {
         </div>
       </div>
 
-      {/* Carousel Modal */}
+      {/* Carousel Modal 
       {selectedProgram !== null && (
         <div
           className="fixed inset-0 z-50 bg-foreground/90 flex items-center justify-center p-4"
@@ -220,7 +215,7 @@ export function ProgramsSection() {
             </div>
           </div>
         </div>
-      )}
+      )}*/}
     </section>
   )
 }

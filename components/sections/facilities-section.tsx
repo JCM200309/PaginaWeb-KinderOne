@@ -33,7 +33,7 @@ const facilities = [
   {
     icon: BookOpen,
     title: "Talleres",
-    description: "Desde Yoga y deportes para favorecer la coordinacion y el equilibrio, hasta Ingles para ir integrando el idioma como herramienta de comunicación  ",
+    description: "Distintos talleres como por ejemplo: yoga, deportes, teatro, titeres y arte para fomentar la creatividad y el desarrollo integral. Ademas contamos con taller de Ingles para comenzar a integrar el idioma como herramienta de comunicación.",
   },
 ]
 

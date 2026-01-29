@@ -35,7 +35,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Dirección",
-    value: "Av. del Jardín 1234, CABA",
+    value: "Av Federico Lacroze 2105, CABA",
     href: "https://maps.app.goo.gl/HGvPMvHm5X5Dscyn8",
     color: "bg-puzzle-yellow",
   },
