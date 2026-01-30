@@ -63,11 +63,19 @@ export function ContactSection() {
     
     try{
 
-      await fetch("/api/contactar", {
+      const res = await fetch("/api/contactar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
+      const payload = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        console.error("API error:", payload);
+        toast.error(payload?.error || "No se pudo enviar ❌");
+        return;
+      }
 
 
       // opcional: limpiar form
