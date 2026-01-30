@@ -63,7 +63,7 @@ export function ContactSection() {
     
     try{
 
-      const res = await fetch("/api/contactar", {
+      const res = await fetch("https://www.jardinkinderone.com.ar/api/contactar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
