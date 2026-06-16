@@ -3,12 +3,7 @@
 import { PuzzlePiece } from "@/components/puzzle-piece"
 import { ShieldCheck, Sparkles, Users, Ruler } from "lucide-react"
 
-const uniformImages = [
-  { src: "/images/uniform/remera.jpeg", alt: "Remera Kinder One" },
-  { src: "/images/uniform/campera.jpeg", alt: "Campera Kinder One" },
-  { src: "/images/uniform/pantalon.jpeg", alt: "Pantalón Kinder One" },
-  { src: "/images/uniform/short.jpeg", alt: "Short Kinder One" },
-]
+
 
 export function UniformSection() {
   return (
@@ -35,7 +30,7 @@ export function UniformSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Text Content */}
           <div className="space-y-8">
             <div className="grid sm:grid-cols-2 gap-6">
@@ -74,26 +69,19 @@ export function UniformSection() {
             </div>
           </div>
 
-          {/* Image Grid */}
-          <div className="grid grid-cols-2 gap-4">
-            {uniformImages.map((img, i) => (
-              <div 
-                key={i} 
-                className={`
-                  relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md
-                  transform transition-all duration-300 hover:scale-105
-                  ${i % 2 === 0 ? "rotate-2" : "-rotate-2"}
-                  hover:rotate-0
-                `}
-              >
-                <img 
-                  src={img.src} 
-                  alt={img.alt} 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/10 hover:bg-black/0 transition-colors" />
-              </div>
-            ))}
+          {/* Single Image Container */}
+          <div className="relative flex justify-center items-center lg:pl-6">
+            {/* Background design elements */}
+            <div className="absolute -inset-4 bg-gradient-to-tr from-puzzle-blue/10 via-puzzle-green/10 to-puzzle-yellow/10 rounded-[2.5rem] transform -rotate-2 scale-102 filter blur-sm pointer-events-none" />
+            <div className="absolute -inset-4 border-2 border-dashed border-puzzle-green/30 rounded-[2.5rem] transform rotate-1 scale-101 pointer-events-none" />
+            
+            <div className="relative w-full max-w-xl lg:max-w-2xl aspect-[1312/1199] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white transform transition-all duration-500 hover:scale-[1.02] hover:rotate-1 group bg-white">
+              <img 
+                src="/images/uniforme.jpeg" 
+                alt="Uniforme Escolar Kinder One" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
           </div>
         </div>
       </div>
