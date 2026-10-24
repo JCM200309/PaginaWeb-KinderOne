@@ -7,6 +7,7 @@ import { UniformSection } from "@/components/sections/uniform-section"
 import { GallerySection } from "@/components/sections/gallery-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { FooterSection } from "@/components/sections/footer-section"
+import { WhatsappButton } from "@/components/whatsapp-button"
 
 export default function KinderOnePage() {
   return (
@@ -20,6 +21,7 @@ export default function KinderOnePage() {
       <GallerySection />
       <ContactSection />
       <FooterSection />
+      <WhatsappButton />
     </main>
   )
 }

@@ -8,12 +8,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
-import ReCAPTCHA from "react-google-recaptcha"
 import { toast } from "sonner";
+import { buildWhatsappUrl, WHATSAPP_DISPLAY } from "@/lib/whatsapp"
 
-const phoneNumber = "+5491166415555";
-const message = encodeURIComponent("Hola, queria consultar mas información sobre Kinder One!");
-const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+const whatsappUrl = buildWhatsappUrl();
 
 
 
@@ -21,7 +19,7 @@ const contactInfo = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+54 9 11 6641-5555",
+    value: WHATSAPP_DISPLAY,
     href: whatsappUrl,
     color: "bg-puzzle-green",
   },
@@ -49,52 +47,26 @@ const contactInfo = [
 ]
 
 export function ContactSection() {
-  const [capVal, setCapVal] = useState<string | null>(null)
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
-    phone: "",
     message: "",
   })
-  
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    try{
 
-      const res = await fetch("https://www.jardinkinderone.com.ar/api/contactar", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+    const name = formData.name.trim();
+    const message = formData.message.trim();
 
-      const payload = await res.json().catch(() => ({}));
-
-      if (!res.ok) {
-        console.error("API error:", payload);
-        toast.error(payload?.error || "No se pudo enviar ❌");
-        return;
-      }
-
-
-      // opcional: limpiar form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message:''
-      });
-
-      
-
-
-      toast.success("Mail enviado ✅");
-
-    }catch (e) {
-      console.error("ERROR /lib/contactar.js", e);
-      toast.error("No se pudo enviar ❌");
+    if (!name || !message) {
+      toast.error("Completá tu nombre y mensaje 🧩");
+      return;
     }
+
+    const text = `Hola! Soy ${name}.\n\n${message}`;
+    window.open(buildWhatsappUrl(text), "_blank", "noopener,noreferrer");
+
+    setFormData({ name: "", message: "" });
   };
 
   return (
@@ -136,60 +108,37 @@ export function ContactSection() {
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label className="block text-sm font-bold text-foreground mb-2">Nombre completo</label>
+                  <label htmlFor="contact-name" className="block text-sm font-bold text-foreground mb-2">Nombre completo</label>
                   <Input
+                    id="contact-name"
                     type="text"
                     placeholder="María García"
+                    required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="rounded-xl border-2 border-muted focus:border-puzzle-pink h-12"
                   />
                 </div>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-bold text-foreground mb-2">Email</label>
-                    <Input
-                      type="email"
-                      placeholder="maria@email.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="rounded-xl border-2 border-muted focus:border-puzzle-blue h-12"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-foreground mb-2">Teléfono</label>
-                    <Input
-                      type="tel"
-                      placeholder="+54 9 11 1234-5678"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="rounded-xl border-2 border-muted focus:border-puzzle-green h-12"
-                    />
-                  </div>
-                </div>
                 <div>
-                  <label className="block text-sm font-bold text-foreground mb-2">Mensaje</label>
+                  <label htmlFor="contact-message" className="block text-sm font-bold text-foreground mb-2">Mensaje</label>
                   <Textarea
+                    id="contact-message"
                     placeholder="Contanos sobre tu hijo/a y qué te gustaría saber..."
+                    required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={4}
                     className="rounded-xl border-2 border-muted focus:border-puzzle-yellow resize-none"
                   />
                 </div>
-                <div>
-                  <ReCAPTCHA
-                    sitekey="6Ld7E1UsAAAAAPm1TvhlFCfB5rdkWzrttolh2_Rq"
-                    onChange={(val: string | null) => setCapVal(val)}
-                  />
-                </div>
                 <Button
+                  id="contact-submit"
                   type="submit"
                   size="lg"
-                  className="w-full rounded-full text-lg font-bold bg-primary hover:bg-primary/90 h-14"
-                  disabled={!capVal}
+                  className="w-full rounded-full text-lg font-bold bg-[#25D366] hover:bg-[#1ebe5b] text-white h-14 gap-2"
                 >
-                  Enviar Mensaje 🧩
+                  <MessageCircle className="w-5 h-5" />
+                  Enviar por WhatsApp
                 </Button>
                 
               </form>
